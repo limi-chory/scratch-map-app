@@ -20,6 +20,26 @@ export const AREA_LIST = [
   "Sejong",
 ];
 
+export const AREA_NAME: any = {
+  Seoul: "서울",
+  Busan: "부산",
+  Daegu: "대구",
+  Incheon: "인천",
+  Gwangju: "광주",
+  Daejeon: "대전",
+  Ulsan: "울산",
+  Gyeonggi: "경기",
+  Gangwon: "강원",
+  NorthChungcheong: "충북",
+  SouthChungcheong: "충남",
+  NorthJeolla: "전북",
+  SouthJeolla: "전남",
+  NorthGyeongsang: "경북",
+  SouthGyeongsang: "경남",
+  Jeju: "제주",
+  Sejong: "세종",
+};
+
 export const AREA_INITIAL_VISITED_STATUS: AreaVisitedType = AREA_LIST.reduce(
   (acc, cur) => ({ ...acc, [cur]: false }),
   {}

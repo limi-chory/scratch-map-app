@@ -18,6 +18,14 @@
   stroke-width: 2;
 }
 
-.Box {
-  background-color: red;
+.tooltipShape {
+  fill: yellow;
+  width: 35px;
+  height: 20px;
+}
+
+.tooltipText {
+  font-size: 14;
+  fill: black;
+  font-weight: bold;
 }
