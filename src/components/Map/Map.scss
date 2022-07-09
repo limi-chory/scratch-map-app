@@ -1,0 +1,23 @@
+.Area {
+  fill: #cccccc;
+  stroke: #333333;
+}
+
+.Area:hover {
+  fill: #aaaaaa;
+  stroke-width: 2;
+}
+
+.VisitedArea {
+  fill: #ffa500;
+  stroke: #bb7200;
+}
+
+.VisitedArea:hover {
+  fill: #dd9400;
+  stroke-width: 2;
+}
+
+.Box {
+  background-color: red;
+}
