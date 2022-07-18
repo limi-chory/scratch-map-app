@@ -33,7 +33,7 @@ const Map: React.FC = () => {
       <svg viewBox="0 0 700 850">
         <g>
           {AREA_LIST.map((area) => (
-            <>
+            <React.Fragment key={area}>
               <path
                 id={area}
                 className={areaVisitedStatus[area] ? "VisitedArea" : "Area"}
@@ -47,7 +47,7 @@ const Map: React.FC = () => {
                   {AREA_NAME[area]}
                 </text>
               </Tooltip>
-            </>
+            </React.Fragment>
           ))}
         </g>
       </svg>
