@@ -29,8 +29,8 @@ const Map: React.FC = () => {
   };
 
   return (
-    <div style={{ width: "700px", height: "750px" }}>
-      <svg viewBox="0 0 700 750">
+    <div style={{ width: "700px", height: "850px" }}>
+      <svg viewBox="0 0 700 850">
         <g>
           {AREA_LIST.map((area) => (
             <>
