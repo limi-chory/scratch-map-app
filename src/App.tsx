@@ -1,9 +1,9 @@
 import React from "react";
 
-import Map from "./components/Map/Map";
+import MapV2 from "./components/MapV2/MapV2";
 
 function App() {
-  return <Map />;
+  return <MapV2 />;
 }
 
 export default App;
