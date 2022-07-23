@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { BottomSheet } from "react-spring-bottom-sheet";
+import "react-spring-bottom-sheet/dist/style.css";
 
 import "./HomePage.scss";
 import MapV2 from "../../views/MapV2/MapV2";
 import Header from "../../views/Header/Header";
+import { getCityLabelByRcode } from "../../../utils/getCityLabel";
+import { LABEL_BY_RCODE } from "../../views/MapV2/const";
 
 const HomePage: React.FC = () => {
+  const [selectedArea, setSelectedArea] = useState<number>(0);
+  const handleClickArea = (rcode: number) => {
+    setSelectedArea(rcode);
+  };
+
+  getCityLabelByRcode();
   return (
-    <div className="container">
-      <Header />
-      <MapV2 />
-    </div>
+    <>
+      <div className="container">
+        <Header />
+        <MapV2 handleClickArea={handleClickArea} />
+        <BottomSheet open={!!selectedArea} onDismiss={() => setSelectedArea(0)}>
+          <div className="bottomSheet">
+            <h2>{LABEL_BY_RCODE[selectedArea]?.kr}</h2>
+          </div>
+        </BottomSheet>
+      </div>
+    </>
   );
 };
 

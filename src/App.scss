@@ -4,3 +4,13 @@ body,
   height: 100%;
   margin: 0;
 }
+
+:root {
+  // --rsbs-backdrop-bg: rgba(0, 0, 0, 0.6);
+  // --rsbs-bg: #31313a;
+  // --rsbs-handle-bg: #31313a;
+  --rsbs-max-w: 480px;
+  --rsbs-ml: auto;
+  --rsbs-mr: auto;
+  --rsbs-overlay-rounded: 16px;
+}

@@ -7,14 +7,15 @@ import { localeText, PATH_TYPE } from "./type";
 
 type MetroPolitanCityProps = {
   label: localeText;
+  handleClickArea: () => void;
 };
 
-const MetroPolitanCity: React.FC<MetroPolitanCityProps> = ({ label }) => {
+const MetroPolitanCity: React.FC<MetroPolitanCityProps> = ({ label, handleClickArea }) => {
   const cityRef = React.createRef<SVGCircleElement>();
 
   return (
     <>
-      <g className="Area" id={label.en} ref={cityRef}>
+      <g className="Area" id={label.en} ref={cityRef} onClick={handleClickArea}>
         {AREA_LV2[label.en].map(({ rcode }) => {
           const { type, d: data } = PATH[rcode];
           if (type === PATH_TYPE.SINGLE) {

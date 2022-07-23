@@ -9,9 +9,10 @@ import "./MapV2.scss";
 type BasicCityProps = {
   rcode: number;
   label: localeText;
+  handleClickArea: (rcode: number) => void;
 };
 
-const BasicCity: React.FC<BasicCityProps> = ({ rcode, label }) => {
+const BasicCity: React.FC<BasicCityProps> = ({ rcode, label, handleClickArea }) => {
   const { type, d: data } = PATH[rcode];
   const cityRef = React.createRef<SVGCircleElement>();
 
@@ -22,7 +23,7 @@ const BasicCity: React.FC<BasicCityProps> = ({ rcode, label }) => {
 
   return (
     <>
-      <g className="Area" id={label.en} ref={cityRef}>
+      <g className="Area" id={label.en} ref={cityRef} onClick={() => handleClickArea(rcode)}>
         {isSinglePath && <path key={rcode} d={data} />}
         {isMultiPath && data.map((d, index) => <path key={`${rcode}-${index}`} d={d} />)}
       </g>
