@@ -1,23 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  AREA_INITIAL_VISITED_STATUS,
-  AREA_LIST,
-  AREA_NAME,
-  AREA_PATH_DATA,
-} from "./const";
+import { AREA_INITIAL_VISITED_STATUS, AREA_LIST, AREA_NAME, AREA_PATH_DATA } from "./const";
 import "./Map.scss";
 import { AreaVisitedType } from "./type";
 import { Tooltip } from "react-svg-tooltip";
 
 const Map: React.FC = () => {
-  const [areaVisitedStatus, setAreaVisitedStatus] = useState<AreaVisitedType>(
-    AREA_INITIAL_VISITED_STATUS
-  );
+  const [areaVisitedStatus, setAreaVisitedStatus] = useState<AreaVisitedType>(AREA_INITIAL_VISITED_STATUS);
 
-  const pathRef: any = AREA_LIST.reduce(
-    (acc, cur) => ({ ...acc, [cur]: React.createRef<SVGCircleElement>() }),
-    {}
-  );
+  const pathRef: any = AREA_LIST.reduce((acc, cur) => ({ ...acc, [cur]: React.createRef<SVGCircleElement>() }), {});
 
   const onClickArea = (e: any) => {
     const areaId = e.target.id;
@@ -67,10 +57,7 @@ const Map: React.FC = () => {
       viewBox.h = h - dh;
       scale = (svgSize.w as number) / viewBox.w;
 
-      svgRef.current?.setAttribute(
-        "viewBox",
-        `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`
-      );
+      svgRef.current?.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
     };
 
     const handleOnMouseDown = (e: any) => {
@@ -111,10 +98,7 @@ const Map: React.FC = () => {
         viewBox.x = viewBox.x + dx;
         viewBox.y = viewBox.y + dy;
 
-        svgRef.current?.setAttribute(
-          "viewBox",
-          `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`
-        );
+        svgRef.current?.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);
 
         isPanning = false;
       }
