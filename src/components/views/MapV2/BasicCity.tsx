@@ -1,7 +1,7 @@
 import React from "react";
 import { Tooltip } from "react-svg-tooltip";
 
-import { getCityTooltipLabel } from "../../utils/getCityLabel";
+import { getCityTooltipLabel } from "../../../utils/getCityLabel";
 import { PATH } from "./path";
 import { localeText, PATH_TYPE } from "./type";
 import "./MapV2.scss";

@@ -1,9 +1,9 @@
 import React from "react";
 
-import MapV2 from "./components/MapV2/MapV2";
+import HomePage from "./components/pages/Home/HomePage";
 
 function App() {
-  return <MapV2 />;
+  return <HomePage />;
 }
 
 export default App;

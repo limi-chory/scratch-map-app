@@ -8,8 +8,8 @@ import MetroPolitanCity from "./MetroPolitanCity";
 
 const MapV2: React.FC = () => {
   return (
-    <div style={{ width: "1000px", height: "1000px" }}>
-      <svg viewBox="0 0 1000 1000">
+    <div style={{}}>
+      <svg viewBox="0 -50 530 800">
         {Object.entries(AREA_LV1).map(([name, area]) => {
           const { isMetropolitan, label } = area;
 

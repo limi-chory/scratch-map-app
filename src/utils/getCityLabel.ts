@@ -1,4 +1,4 @@
-import { localeText } from "../components/MapV2/type";
+import { localeText } from "../components/views/MapV2/type";
 
 export function getCityTooltipLabel(label: localeText): localeText {
   const enLabel = label.en;
