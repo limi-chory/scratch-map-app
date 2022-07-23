@@ -184,7 +184,7 @@ export const AREA_LV2: { [key: string]: Area[] } = {
     { rcode: 120500, areaLv: 2, label: { en: "boryeong", kr: "보령시" } },
     { rcode: 120600, areaLv: 2, label: { en: "seosan", kr: "서산시" } },
     { rcode: 120700, areaLv: 2, label: { en: "asan", kr: "아산시" } },
-    { rcode: 120800, areaLv: 2, label: { en: "cheonan", kr: "천안" } },
+    { rcode: 120800, areaLv: 2, label: { en: "cheonan", kr: "천안시" } },
     { rcode: 120900, areaLv: 2, label: { en: "geumsan", kr: "금산군" } },
     { rcode: 121000, areaLv: 2, label: { en: "buyeo", kr: "부여군" } },
     { rcode: 121100, areaLv: 2, label: { en: "seocheon", kr: "서천군" } },

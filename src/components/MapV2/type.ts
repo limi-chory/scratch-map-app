@@ -6,10 +6,12 @@ export type Area = {
   areaLv: number;
   isMetropolitan?: boolean;
 
-  label: {
-    en: string;
-    kr: string;
-  };
+  label: localeText;
+};
+
+export type localeText = {
+  en: string;
+  kr: string;
 };
 
 export type SinglePathType = string;

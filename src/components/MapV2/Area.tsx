@@ -2,25 +2,23 @@ import React from "react";
 
 import { AREA_LV2 } from "./const";
 import { PATH } from "./path";
-import { Area as AreaType, PATH_TYPE } from "./type";
+import { PATH_TYPE } from "./type";
 
 type AreaProps = {
   name: string;
-  area: AreaType;
+  isMetropolitan: boolean;
 };
 
-const Area: React.FC<AreaProps> = ({ name, area }) => {
-  const { isMetropolitan } = area;
-
+const Area: React.FC<AreaProps> = ({ name, isMetropolitan }) => {
   if (isMetropolitan) {
     return (
       <g className="Area" id={name}>
         {AREA_LV2[name].map(({ rcode }) => {
           const { type, d: data } = PATH[rcode];
           if (type === PATH_TYPE.SINGLE) {
-            return typeof data === "string" && <path key={rcode} d={data}></path>;
+            return typeof data === "string" && <path key={rcode} d={data} />;
           } else {
-            return typeof data === "object" && data.map((d, index) => <path key={`${rcode}-${index}`} d={d}></path>);
+            return typeof data === "object" && data.map((d, index) => <path key={`${rcode}-${index}`} d={d} />);
           }
         })}
       </g>
@@ -34,7 +32,7 @@ const Area: React.FC<AreaProps> = ({ name, area }) => {
             return (
               typeof data === "string" && (
                 <g className="Area" id={label.en} key={rcode}>
-                  <path key={rcode} d={data}></path>
+                  <path key={rcode} d={data} />
                 </g>
               )
             );
@@ -43,7 +41,7 @@ const Area: React.FC<AreaProps> = ({ name, area }) => {
               typeof data === "object" && (
                 <g className="Area" id={label.en} key={rcode}>
                   {data.map((d, index) => (
-                    <path key={`${rcode}-${index}`} d={d}></path>
+                    <path key={`${rcode}-${index}`} d={d} />
                   ))}
                 </g>
               )
