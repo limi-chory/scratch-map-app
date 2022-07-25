@@ -5,7 +5,6 @@ import "react-spring-bottom-sheet/dist/style.css";
 import "./HomePage.scss";
 import MapV2 from "../../views/MapV2/MapV2";
 import Header from "../../views/Header/Header";
-import { getCityLabelByRcode } from "../../../utils/getCityLabel";
 import { LABEL_BY_RCODE } from "../../views/MapV2/const";
 
 const HomePage: React.FC = () => {
@@ -14,19 +13,17 @@ const HomePage: React.FC = () => {
     setSelectedArea(rcode);
   };
 
-  getCityLabelByRcode();
+  // getCityLabelByRcode();
   return (
-    <>
-      <div className="container">
-        <Header />
-        <MapV2 handleClickArea={handleClickArea} />
-        <BottomSheet open={!!selectedArea} onDismiss={() => setSelectedArea(0)}>
-          <div className="bottomSheet">
-            <h2>{LABEL_BY_RCODE[selectedArea]?.kr}</h2>
-          </div>
-        </BottomSheet>
-      </div>
-    </>
+    <div className="container">
+      <Header />
+      <MapV2 handleClickArea={handleClickArea} />
+      <BottomSheet open={!!selectedArea} onDismiss={() => setSelectedArea(0)}>
+        <div className="bottomSheet">
+          <h2>{LABEL_BY_RCODE[selectedArea]?.kr}</h2>
+        </div>
+      </BottomSheet>
+    </div>
   );
 };
 
