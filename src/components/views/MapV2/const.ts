@@ -141,7 +141,7 @@ export const AREA_LV2: { [key: string]: Area[] } = {
     { rcode: 92800, areaLv: 2, label: { en: "hwaseong", kr: "화성시" } },
     { rcode: 92900, areaLv: 2, label: { en: "gapyeong", kr: "가평군" } },
     { rcode: 93000, areaLv: 2, label: { en: "yangpyeong", kr: "양평군" } },
-    { rcode: 93100, areaLv: 2, label: { en: "yeoncheon", kr: "여천군" } },
+    { rcode: 93100, areaLv: 2, label: { en: "yeoncheon", kr: "연천군" } },
   ],
   gangwon: [
     { rcode: 100100, areaLv: 2, label: { en: "gangneung", kr: "강릉시" } },
@@ -610,8 +610,8 @@ export const LABEL_BY_RCODE: { [key: number]: localeText } = {
     kr: "광주광역시 서구",
   },
   80000: {
-    en: "Sejong Sejong",
-    kr: "세종특별자치시 세종특별자치시",
+    en: "Sejong",
+    kr: "세종특별자치시",
   },
   90000: {
     en: "Gyeonggi",
