@@ -739,7 +739,7 @@ export const LABEL_BY_RCODE: { [key: number]: localeText } = {
   },
   93100: {
     en: "Gyeonggi Yeoncheon",
-    kr: "경기도 여천군",
+    kr: "경기도 연천군",
   },
   100000: {
     en: "Gangwon",
