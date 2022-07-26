@@ -6,12 +6,17 @@ import "./HomePage.scss";
 import MapV2 from "../../views/MapV2/MapV2";
 import Header from "../../views/Header/Header";
 import { LABEL_BY_RCODE } from "../../views/MapV2/const";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const HomePage: React.FC = () => {
   const [selectedArea, setSelectedArea] = useState<number>(0);
   const handleClickArea = (rcode: number) => {
     setSelectedArea(rcode);
   };
+  const [startDate, setStartDate] = useState(new Date());
+
 
   // getCityLabelByRcode();
   return (
@@ -21,6 +26,7 @@ const HomePage: React.FC = () => {
       <BottomSheet open={!!selectedArea} onDismiss={() => setSelectedArea(0)}>
         <div className="bottomSheet">
           <h2>{LABEL_BY_RCODE[selectedArea]?.kr}</h2>
+          <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)} />
         </div>
       </BottomSheet>
     </div>
