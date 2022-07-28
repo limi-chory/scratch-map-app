@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { BottomSheet } from "react-spring-bottom-sheet";
 import "react-spring-bottom-sheet/dist/style.css";
 
@@ -24,6 +24,16 @@ const HomePage: React.FC = () => {
     setEndDate(end);
   };
 
+  interface Foo {
+    value: any;
+    onClick: any;
+  }
+  const CustomDatePickerInput = forwardRef<HTMLButtonElement, Foo>((prop: { value: any, onClick: any }, ref: any) => (
+    <button className="example-custom-input" onClick={prop.onClick} ref={ref}>
+      {prop.value}
+    </button>
+  ));
+
   // getCityLabelByRcode();
   return (
     <div className="container">
@@ -38,10 +48,9 @@ const HomePage: React.FC = () => {
             startDate={startDate}
             endDate={endDate}
             dateFormat="yyyy년 MM월 dd일"
+            customInput={<CustomDatePickerInput value={undefined} onClick={undefined} />}
             selectsRange
-
           />
-
         </div>
       </BottomSheet>
     </div>
