@@ -26,7 +26,11 @@ const HomePage: React.FC = () => {
       <BottomSheet open={!!selectedArea} onDismiss={() => setSelectedArea(0)}>
         <div className="bottomSheet">
           <h2>{LABEL_BY_RCODE[selectedArea]?.kr}</h2>
-          <DatePicker selected={startDate} onChange={(date: Date) => setStartDate(date)} />
+          <DatePicker
+            selected={startDate}
+            onChange={(date: Date) => setStartDate(date)}
+            dateFormat="yyyy년 MM월 dd일"
+          />
         </div>
       </BottomSheet>
     </div>
