@@ -16,7 +16,13 @@ const HomePage: React.FC = () => {
     setSelectedArea(rcode);
   };
   const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
+  const onChange = (dates: [Date, Date]) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
 
   // getCityLabelByRcode();
   return (
@@ -28,9 +34,14 @@ const HomePage: React.FC = () => {
           <h2>{LABEL_BY_RCODE[selectedArea]?.kr}</h2>
           <DatePicker
             selected={startDate}
-            onChange={(date: Date) => setStartDate(date)}
+            onChange={onChange}
+            startDate={startDate}
+            endDate={endDate}
             dateFormat="yyyy년 MM월 dd일"
+            selectsRange
+
           />
+
         </div>
       </BottomSheet>
     </div>
