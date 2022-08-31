@@ -4,7 +4,7 @@ import "react-spring-bottom-sheet/dist/style.css";
 
 import "./HomePage.scss";
 import MapV2 from "../../views/MapV2/MapV2";
-import Header from "../../views/Header/Header";
+import SearchBar from "../../views/SearchBar";
 import { LABEL_BY_RCODE } from "../../views/MapV2/const";
 import VisitDatePicker from "../../views/DatePicker/VisitDatePicker";
 
@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
   // getCityLabelByRcode();
   return (
     <div className="container">
-      <Header />
+      <SearchBar />
       <MapV2 handleClickArea={handleClickArea} />
       <BottomSheet open={!!selectedArea} onDismiss={() => setSelectedArea(0)}>
         <div className="bottomSheet">

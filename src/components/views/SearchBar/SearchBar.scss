@@ -1,0 +1,49 @@
+.searchBarContainer {
+  position: sticky;
+  height: 73px;
+  width: 100%;
+}
+
+.searchBar {
+  position: relative;
+  top: 17px;
+  height: 56px;
+  width: 88%;
+  left: 6%;
+  border: 1px solid #585858;
+  border-radius: 5px;
+}
+
+.listIcon {
+  position: relative;
+  left: 10px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.searchIcon {
+  position: relative;
+  float: right;
+  right: 6px;
+  top: 8px;
+  cursor: pointer;
+}
+
+.searchInput {
+  position: absolute;
+  left: 46px;
+  top: 17px;
+  height: 22px;
+  width: 320px;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  ::placeholder {
+    font-style: normal;
+  }
+}
+
+.searchInput:focus {
+  outline: none;
+}
